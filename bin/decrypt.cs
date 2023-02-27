@@ -1,19 +1,27 @@
 using System;
-//using System.IO;
-using WorkingWithFile;
+using System.IO;
+//using WorkingWithFile;
 using System.Text;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices;
 
 namespace RijndaelManaged_Example{
     class RijndaelExample{
         public static void Main(string[] args){
+            //[DllImport("../lib/WorkingWithFile.dll", CharSet = CharSet.Unicode)]
             //Console.WriteLine("decripitar dentro "+string.Join(" ",args));
-            byte[] encrypted = ReadFile.Bytes(args[0]);
+            /*byte[] encrypted = ReadFile.Bytes(args[0]);
             byte[] IV = ReadFile.Bytes(args[1]);
-            byte[] Key = ReadFile.Bytes(args[2]);
+            byte[] Key = ReadFile.Bytes(args[2]);*/
+
+            byte[] encrypted = File.ReadAllBytes(args[0]);
+            byte[] IV = File.ReadAllBytes(args[1]);
+            byte[] Key = File.ReadAllBytes(args[2]);
+
             string text = DecryptStringFromBytes(encrypted, Key,IV);
             //Console.WriteLine(text);
-            WriteFile.StringToBytes(Path.GetFileNameWithoutExtension(args[0])+"Decrypted.txt",text);
+            //WriteFile.StringToBytes(Path.GetFileNameWithoutExtension(args[0])+"Decrypted.txt",text);
+            WritingTextToFile(args[0]+"Decrypted.txt",text);
         }
         static string DecryptStringFromBytes(byte[] cipherText, byte[] Key, byte[] IV){
             // Check arguments.
@@ -48,11 +56,10 @@ namespace RijndaelManaged_Example{
             }
             return plaintext;
         }
-/*        static void WritingTextToFile(string filename, string content){
+        static void WritingTextToFile(string filename, string content){
             FileStream file = new FileStream(filename, FileMode.OpenOrCreate);
             byte[] contentInBytes = new UTF8Encoding(true).GetBytes(content);
             file.Write(contentInBytes, 0, contentInBytes.Length);
         }
-*/
     }
 }
