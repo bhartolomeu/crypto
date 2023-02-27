@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -133,14 +133,14 @@ namespace cryptoController{
             string[] index2 = new string[4]; 
 
             index1[0]="Manual for crypto command";
-            index1[1]="argument for encrypting a message.\nYou must pass the file name and path to put the encrypted data, IV file and Key file. \ncrypto -e [file to encrypt] [path to put the Encrypted file, the IV file and the Key file]";
-            index1[2]="argument for decrypting a message.\nYou must pass the encrypted file path, the IV - initialization vector - file path and the Key file path\n crypto -d [Encrypted file] [IV file] [Key file]";
+            index1[1]="argument for encrypting a message.\nYou must pass the file name and path to\n put the encrypted data, IV file and Key file. \ncrypto -e [file to encrypt] [final path]";
+            index1[2]="argument for decrypting a message.\nYou must pass the encrypted file path,\n the IV - initialization vector - file path and the Key file path\n crypto -d [Encrypted file] [IV file] [Key file]";
             index1[3]="show the manual. \nYou must pass the language code right after man parammeter.\n crypto man [language code].";
             manual.Add("en",index1);
 
             index2[0] = "Manual para o comando crypto";
-            index2[1] = "argumento para codificar uma mensagem. \nVocê deve passar  o nome do arquivo para ser codificado e o diretório paa colocar o arquivo codificado, com IV e as chaves. \n crypto -e [arquivo para codificar][diretório para colocar o arquivo encripitado, o arquivo IV - initialization vector - e arquivo com as chaves]";
-            index2[2] = "argumento para decodificar uma mensagem. \nVocê deve passar o endereço do arquivo codificado, do IV - initialization vector - e o arquivo com as chaves. \n crypto -d [arquivo codificado] [arquivo IV ] [arquivo com as chaves]";
+            index2[1] = "argumento para codificar uma mensagem. \nVocê deve passar  o nome do arquivo para ser codificado e o \ndiretório para colocar o arquivo codificado, com IV e as chaves. \n crypto -e [arquivo para codificar][diretório de destino]";
+            index2[2] = "argumento para decodificar uma mensagem. \nVocê deve passar o endereço do arquivo codificado, \ndo IV - initialization vector - e o arquivo com as chaves. \n crypto -d [arquivo codificado] [arquivo IV ] [arquivo com as chaves]";
             index2[3] = "mostra o manual. \nVocê deve passar o código da língua logo após o parâmetro man. \n crypto man [código da língua]";
             manual.Add("pt",index2);
 
@@ -148,16 +148,17 @@ namespace cryptoController{
         }
         static void help(string lg){
             //para obter o manual em formato de dictionary, chama-se a função getManualContent
-            Dictionary <string,string[]> manual = getManualContent();
+            Dictionary<string,string[]> manual = getManualContent();
             //Exibindo o manual
-            Console.WriteLine("--------"+manual[lg][0]+"--------\n");;
+            Console.WriteLine("\n--------"+manual[lg][0]+"--------\n");;
             Console.WriteLine("-e : "+manual[lg][1]);
-            Console.WriteLine("----------------------------\n");
+            Console.WriteLine("\n----------------------------\n");
             Console.WriteLine("-d : "+manual[lg][2] );
-            Console.WriteLine("----------------------------\n");
+            Console.WriteLine("\n----------------------------\n");
             Console.WriteLine("man: "+manual[lg][3]);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("\n----------------------------");
         }
+
         static void executar(string filename, string[] args){
             //Descomente esta linha para testes
             //Console.WriteLine(filename+" "+string.Join(" ",args));
@@ -168,6 +169,7 @@ namespace cryptoController{
             processo.Arguments = string.Join(" ",args);
             //pedindo para não criar outra janela de prompt
             processo.CreateNoWindow = true;
+
             //iniciando o processo            
             Process.Start(processo);
         }
