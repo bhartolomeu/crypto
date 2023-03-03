@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DllExport" Version="1.7.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\source\repos\WorkingWithFiles\WorkingWithFiles\WorkingWithFiles.csproj" />
+  </ItemGroup>
+
 </Project>

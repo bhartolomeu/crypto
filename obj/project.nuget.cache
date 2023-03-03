@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DRHRCK8fS93+1oZdGA+Xp6b8FuKtXcC6kV3a9cuoZ1Nuu599EjenfQhIrsFWoLPSl2xZEeVRdG6OBZW+1Ys+6g==",
+  "dgSpecHash": "UFnn6QkVWp2YS6ovoqeLK9VEXX0/xQNQ7d/lf2KAYnZYRK9YDomHh2vPaVXHh6dW+NCtytzrshvgNBQPiSRVNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aline Fortes\\Documents\\bart\\escola_bart\\teste\\testeDOTNET\\crypto\\crypto.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Windows-10\\Documents\\crypto\\crypto\\crypto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Windows-10\\.nuget\\packages\\dllexport\\1.7.4\\dllexport.1.7.4.nupkg.sha512"
+  ],
   "logs": []
 }

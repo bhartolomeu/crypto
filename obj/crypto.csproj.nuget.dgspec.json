@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aline Fortes\\Documents\\bart\\escola_bart\\teste\\testeDOTNET\\crypto\\crypto.csproj": {}
+    "C:\\Users\\Windows-10\\Documents\\crypto\\crypto\\crypto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aline Fortes\\Documents\\bart\\escola_bart\\teste\\testeDOTNET\\crypto\\crypto.csproj": {
+    "C:\\Users\\Windows-10\\Documents\\crypto\\crypto\\crypto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aline Fortes\\Documents\\bart\\escola_bart\\teste\\testeDOTNET\\crypto\\crypto.csproj",
+        "projectUniqueName": "C:\\Users\\Windows-10\\Documents\\crypto\\crypto\\crypto.csproj",
         "projectName": "crypto",
-        "projectPath": "C:\\Users\\Aline Fortes\\Documents\\bart\\escola_bart\\teste\\testeDOTNET\\crypto\\crypto.csproj",
-        "packagesPath": "C:\\Users\\Aline Fortes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aline Fortes\\Documents\\bart\\escola_bart\\teste\\testeDOTNET\\crypto\\obj\\",
+        "projectPath": "C:\\Users\\Windows-10\\Documents\\crypto\\crypto\\crypto.csproj",
+        "packagesPath": "C:\\Users\\Windows-10\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Windows-10\\Documents\\crypto\\crypto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Aline Fortes\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Windows-10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "DllExport": {
+              "target": "Package",
+              "version": "[1.7.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

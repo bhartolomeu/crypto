@@ -1,15 +1,15 @@
 using System;
 using System.Text;
 using System.IO;
-//using WorkingWithFiles.WritingToFile;
+using WorkingWithFiles;
 using System.Security.Cryptography;
 namespace Encrypting{
     class EncryptingProgram{
         static void Main(string[] args){
-                // Create a new instance of the Rijndael
-                // class.  This generates a new key and initialization
-                // vector (IV).
-            EncryptStringToBytes(System.IO.File.ReadAllText(args[0]),args[1]);
+            // Create a new instance of the Rijndael class. This generates a new key and 
+            //initialization vector (IV).
+            //[DllImport("../lib/WorkingWithFiles.dll")]
+            EncryptStringToBytes(WorkingWithFiles.ReadFile.BytesToString(args[0]),args[1]);
         }
         static void EncryptStringToBytes(string plainText, string path){
             Console.WriteLine(path);
@@ -38,12 +38,13 @@ namespace Encrypting{
                                 path = path+"/";
                             }
                         }while(path[0]=='"' | path[path.Length - 1]=='"' | path[path.Length - 1]!='/');
+                        //[DllImport("../lib/WorkingWithFiles.dll")]
                         //Armazenando o conteúdo encripitado
-                        WritingBytesToFile(path+"Data",encrypted);
+                        WorkingWithFiles.WriteFile.Bytes(path+"Data",encrypted);
                         //Armazenando iv
-                        WritingBytesToFile(path+"IV",rijAlg.IV);
+                        WorkingWithFiles.WriteFile.Bytes(path+"IV",rijAlg.IV);
                         //Armazenando as keys
-                        WritingBytesToFile(path+"Key",rijAlg.Key);                
+                        WorkingWithFiles.WriteFile.Bytes(path+"Key",rijAlg.Key);                
                     }
                 }
             }                
